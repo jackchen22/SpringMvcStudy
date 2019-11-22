@@ -1,12 +1,15 @@
 package service;
 
+import mapper.UserMapper;
 import pojo.User;
 
 import java.util.HashMap;
 import java.util.List;
 
 public interface UserDao {
-    public  User Login(User user);
+
+    public User Login(User user);
+
     public List<User> getUserList(HashMap map);
     public User getUserByid(int id);
     public int updatehead(User user);
@@ -22,4 +25,5 @@ public interface UserDao {
 
     public List<User> selectLayUitable();
     public List<User> selectpage(HashMap map);
+
 }

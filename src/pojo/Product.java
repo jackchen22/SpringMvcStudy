@@ -1,20 +1,24 @@
 package pojo;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
 public class Product {
-    private Integer id;
-     private String name;
-     private float time;
-     private Date price;
-     private String brand;
 
-    public Product(Integer id, String name, float time, Date price, String brand) {
+    private Integer id;
+    private String name;
+    private Float price;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date creatTime;
+    private String detail;
+
+
+    public Product(Integer id, String name, Float price, Date creatTime, String detail) {
         this.id = id;
         this.name = name;
-        this.time = time;
         this.price = price;
-        this.brand = brand;
+        this.creatTime = creatTime;
+        this.detail = detail;
     }
 
     public Integer getId() {
@@ -33,28 +37,27 @@ public class Product {
         this.name = name;
     }
 
-    public float getTime() {
-        return time;
-    }
-
-    public void setTime(float time) {
-        this.time = time;
-    }
-
-    public Date getPrice() {
+    public Float getPrice() {
         return price;
     }
 
-    public void setPrice(Date price) {
+    public void setPrice(Float price) {
         this.price = price;
     }
-
-    public String getBrand() {
-        return brand;
+    public Date getCreatTime() {
+        return creatTime;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setCreatTime(Date creatTime) {
+        this.creatTime = creatTime;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
     }
 
     @Override
@@ -62,9 +65,9 @@ public class Product {
         return "Product{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", time=" + time +
                 ", price=" + price +
-                ", brand='" + brand + '\'' +
+                ", creatTime=" + creatTime +
+                ", detail='" + detail + '\'' +
                 '}';
     }
 }

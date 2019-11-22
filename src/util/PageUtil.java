@@ -5,7 +5,7 @@ import net.sf.json.JSONArray;
 import java.util.HashMap;
 import java.util.Map;
 
-public  class PageUtil {
+public  class  PageUtil {
     public static HashMap getPageParamer(int page, int limit) {
         int pagestart = (page - 1) * limit;
         HashMap map = new HashMap();
